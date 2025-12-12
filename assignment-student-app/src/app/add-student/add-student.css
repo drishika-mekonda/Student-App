@@ -1,0 +1,89 @@
+h2 {
+  color: #7b2cbf;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* Form Card */
+form {
+  width: 450px;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(123, 44, 191, 0.15);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Labels */
+label {
+  margin-top: 12px;
+  font-weight: 600;
+  color:  #4a2c82;
+}
+
+/* Inputs & Selects */
+input,
+select {
+  margin-top: 4px;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #c9b6e6;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+input:focus,
+select:focus {
+  border-color: #9d4edd;
+}
+
+/* Radio Buttons */
+.radio-group {
+  display: flex;
+  gap: 15px;
+  margin-top: 5px;
+}
+
+.radio-group label {
+  font-weight: normal;
+   color: #4a2c82;
+}
+
+/* Dynamic Messages */
+.msg {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #9d4edd;
+}
+
+/* Error Messages */
+.error small {
+  color: red;
+  font-size: 12px;
+}
+
+/* Button */
+button {
+  margin-top: 20px;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #7b2cbf; 
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #5a189a;
+}
+
+button:disabled {
+  background-color: #d9c7f0;
+  cursor: not-allowed;
+}

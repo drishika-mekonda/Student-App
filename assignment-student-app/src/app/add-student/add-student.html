@@ -1,0 +1,68 @@
+<h2>Add Student</h2>
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+
+  <!-- Name -->
+  <label>Name</label>
+  <input formControlName="name" type="text">
+  <div class="error" *ngIf="form.get('name')?.touched && form.get('name')?.invalid">
+    <small *ngIf="form.get('name')?.errors?.['required']">Name is required.</small>
+    <small *ngIf="form.get('name')?.errors?.['minlength']">Minimum 5 characters required.</small>
+  </div>
+
+  <!-- Class -->
+  <label>Class</label>
+  <select formControlName="class">
+    <option value="">--Select--</option>
+    <option value="4">Class 4</option>
+    <option value="5">Class 5</option>
+    <option value="6">Class 6</option>
+    <option value="7">Class 7</option>
+    <option value="8">Class 8</option>
+    <option value="9">Class 9</option>
+     <option value="10">Class 10</option>
+  </select>
+
+  <!-- Dynamic Messages -->
+  <p class="msg" *ngIf="cls === '9'">You will appear in board exams soon. All the Best !!</p>
+  <p class="msg" *ngIf="cls === '6'">Welcome to middle school!</p>
+  <p class="msg" *ngIf="cls && cls !== '6' && cls !== '9'">
+    Education and hobby go hand in hand!
+  </p>
+
+  <!-- Gender -->
+  <label>Gender</label>
+  <div class="radio-group">
+    <label><input type="radio" value="Male" formControlName="gender"> Male</label>
+    <label><input type="radio" value="Female" formControlName="gender"> Female</label>
+  </div>
+
+  <!-- Hobby -->
+  <label>
+    <input type="checkbox" formControlName="hasHobby">
+    I have a hobby
+  </label>
+
+  <!-- Show/Hide Hobby Field -->
+  <label *ngIf="form.get('hasHobby')?.value">Hobby</label>
+  <input *ngIf="form.get('hasHobby')?.value" formControlName="hobby" type="text">
+
+  <!-- Favorite Subject -->
+  <label>Favorite Subject</label>
+  <select formControlName="favoriteSubject">
+    <option value="">--Select--</option>
+    <option>Math</option>
+    <option>Science</option>
+    <option>English</option>
+    <option>Hindi</option>
+    <option>Social</option>
+    <option>Telugu</option>
+  </select>
+
+  <!-- Submit -->
+  <button type="submit" [disabled]="form.invalid">Save</button>
+</form>
+
+
+
+ 
